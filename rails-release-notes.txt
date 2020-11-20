@@ -1,0 +1,12 @@
+Rails Museum Catalog v. 1.0.0
+
+Links:
+Demo: http://youtu.be/8iBfRXRay10?hd=1
+
+Features:
+Database with museum and painting information
+Index, show, and edit pages allow access to all museums and paintings
+Paintings and museums are cross-referenced
+
+Known issues:
+Paintings occasionally referred to as artists
