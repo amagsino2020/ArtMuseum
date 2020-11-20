@@ -1,0 +1,133 @@
+<html>
+<title> Museum </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">Art Museum</div>
+</header>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:0px">
+
+<!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+ 
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    
+    <p class="w3-left">Ruby On Rails</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+ <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="https://i1.wp.com/auralcrave.com/wp-content/uploads/2017/11/The_Scream_cover.jpg?resize=810%2C445&ssl=1" alt="Shoes" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:20px 54px">
+      <h1 class="w3-jumbo w3-hide-small">Art Museum</h1>
+      <h1 class="w3-hide-small">Search by: </h1>
+     <div class="w3-button w3-black w3-padding-large w3-large" >
+      <%= link_to 'Paintings', controller: 'artists' %> 
+      </div>
+      <div class="w3-button w3-black w3-padding-large w3-large" >
+      <%= link_to 'Museums', controller: 'locations' %>
+      </div>
+    </div>
+  </div>
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="https://www.vangoghgallery.com/img/starry_night_full.jpg" alt="Starry" style="width:100%">
+      <h3>Starry Night</h3>
+      <p>Vincent Van Gogh</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://cdn.mos.cms.futurecdn.net/SSsejZ9krDiV9N8TExmRGZ-320-80.jpg" alt="Mona Lisa" style="width:100%">
+      <h3>Mona Lisa</h3>
+      <p>Leonardo DaVinci</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://colourlex.com/wp-content/uploads/2015/04/Edvard_Munch_The_Scream-pigments-450b.jpg" alt="Scream" style="width:100%">
+      <h3>The Scream</h3>
+      <p>Edvard Munch</p>
+      <p>19th Century</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/81nGp--E87L._AC_SL1024_.jpg" alt="The Kiss" style="width:100%">
+      <h3>The Kiss</h3>
+      <p>Gustav Klimt</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/1200px-Van_Eyck_-_Arnolfini_Portrait.jpg" alt="AP" style="width:100%">
+      <h3>The Arnolfini Portrait</h3>
+      <p>Jan van Eyck</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/71TLfyWpm-L._AC_SY679_.jpg" alt="Toledo" style="width:100%">
+      <h3>View of Toledo</h3>
+      <p>El Greco</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Johannes_Vermeer_-_The_Astronomer_-_WGA24685.jpg" alt="The Astronomer" style="width:100%">
+      <h3>The Astronomer</h3>
+      <p>Johannes Vermeer</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/81tDjU5XrCL._AC_SY741_.jpg" alt="American Gothic" style="width:100%">
+      <h3>American Gothic</h3>
+      <p>Grant Wood</p>
+    </div>
+  </div>
+
+  
+  
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h3>About the Art Museum</h3><br>
+    <div class="w3-padding-32">
+      <h4><b>Learn about your favorite painting!</b></h4>
+      <h6><i>Why do you love art??</i></h6>
+      <p> We want you to be able to navigate through our simple website 
+      and fill out a form to create your own artist or painting information!</p>
+    </div>
+  </div>
+  <hr>
+  
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32">
+    <div class="w3-third">
+      <h3>Hello!</h3>
+      <p>Programmers who want to make a difference</p>
+      <p>Powered by  Allura & Lin</a></p>
+    </div>
+  
+ 
+
+  </footer>
+
+<!-- End page content -->
+</div>
+
+
+</body>
+</html>

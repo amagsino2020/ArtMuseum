@@ -1,0 +1,62 @@
+
+<h1>Listing Paintings</h1>
+
+ <style>
+ 
+    table {
+        width:100%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    #t01 tr:nth-child(even) {
+      background-color: #eee;
+    }
+    #t01 tr:nth-child(odd) {
+      background-color: #fff;
+    }
+    #t01 th {
+      background-color: black;
+      color: white;
+    }
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1 {
+        color: black;
+        text-align: center;
+    }
+</style>
+ 
+ <%= link_to 'New Painting', new_painting_path %>
+ <%= link_to 'Home', controller: 'main' %>
+<table class = "center" id = "t01">
+  <tr>
+    <th>Title</th>
+    <th>Era</th>
+    <th>Museum</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @paintings.each do |painting| %>
+    <tr>
+      <td><%= painting.title %></td>
+      <td><%= painting.name %></td>
+      <td><%= painting.era %></td>
+      <td><%= painting.location %></td>
+      <td><%= link_to 'Show', painting_path(painting) %></td>
+      <td><%= link_to 'Edit', edit_painting_path(painting) %></td>
+      <td><%= link_to 'Destroy', painting_path(painting),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

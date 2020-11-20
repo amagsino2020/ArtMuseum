@@ -1,0 +1,32 @@
+<h1>Painting</h1>
+<style>
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+  font-size: 20px;
+}
+body {
+  background-color: gray;
+}
+
+</style>
+<p>
+  <strong>Title:</strong>
+  <%= @painting.title %>
+</p>
+ 
+
+<p>
+  <strong>Era:</strong>
+  <%= @painting.era %>
+</p>
+
+<p>
+  <strong>Museum:</strong>
+  <%= @painting.location %>
+</p>
+
+<%= link_to 'Edit', edit_painting_path(@painting) %> |
+<%= link_to 'Back', paintings_path %>

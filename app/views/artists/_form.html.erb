@@ -1,0 +1,44 @@
+<%= form_with model: @artist,  local: true do |form| %>
+  
+  <% if @artist.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@artist.errors.count, "error") %> prohibited
+        this painting from being saved:
+      </h2>
+      <ul>
+        <% @artist.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- This form is being changed to the PAINTING form to avoid deleting
+  the artist table and changing the names. The variable names will not 
+  associate to what it is supposed to mean. -->
+  <p>
+    <%= form.label :title %><br> <!-- -->
+    <%= form.text_field :name%>
+  </p>
+ 
+  <p>
+    <%= form.label :artist %><br>
+    <%= form.text_field :nationality %>
+  </p>
+
+   <p>
+    <%= form.label :created_in %><br>
+    <%= form.text_field :birth_year %>
+  </p>
+
+  <p>
+    <%= form.label :medium %><br>
+    <%= form.text_field :death_year %>
+  </p>
+
+ 
+  <p>
+    <%= form.submit %>
+    <th>You are actually creating a new PAINTING</th>
+  </p>
+<% end %>

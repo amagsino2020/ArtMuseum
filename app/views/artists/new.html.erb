@@ -1,0 +1,52 @@
+<style>
+    #TopBar {
+    background-color: black ;
+    color: white ;
+    padding: 5px 15px 5px 25px;
+    height: 72px;   
+    }
+    #Big-Title{
+        text-transform: uppercase;
+        display: inline-block;
+        font-family: 'HCo Ringside Narrow SSm', 'Arial', 'sans-serif';
+        font-size: 1.5em;
+        line-height: 30px;
+        margin-left: 20px;
+        padding-top: 10px;
+        }
+    #Slogan{
+        display: inline-block;
+        float: right;
+        font-style: italic;
+        font-family: 'HCo Ringside Narrow SSm', 'Arial', 'sans-serif';
+        font-size: 1em;
+        padding-top: 15px;
+    }
+    .button {
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+}
+.button1 {background-color: lightgray;}    
+</style>
+
+<head>
+
+<div id="TopBar">
+        <span id="Big-Title">New Painting</span>
+        <span id="Slogan"> Create a new painting with the given information</span>
+
+    </div>
+</body>
+</head>
+
+
+<%= render 'form' %>
+
+<button class="button button1"><%= link_to 'Back', artists_path %></button>

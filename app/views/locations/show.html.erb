@@ -1,0 +1,87 @@
+
+<style>
+
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+  font-size: 20px;
+}
+body {
+  background-color: gray;
+}
+   #TopBar {
+    background-color: black ;
+    color: white ;
+    padding: 5px 15px 5px 25px;
+    height: 72px;   
+    }
+    #Big-Title{
+        text-transform: uppercase;
+        display: inline-block;
+        font-family: 'HCo Ringside Narrow SSm', 'Arial', 'sans-serif';
+        font-size: 1.5em;
+        line-height: 30px;
+        margin-left: 20px;
+        padding-top: 10px;
+        }
+    #Slogan{
+        display: inline-block;
+        float: right;
+        font-style: italic;
+        font-family: 'HCo Ringside Narrow SSm', 'Arial', 'sans-serif';
+        font-size: 1em;
+        padding-top: 15px;
+    }
+    .button {
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+}
+.button1 {background-color: lightgray;} 
+
+</style>
+
+<head>
+
+<div id="TopBar">
+        <span id="Big-Title">Location of Museum</span>
+        <span id="Slogan"> Here is your Museum information</span>
+
+    </div>
+</body>
+</head>
+
+<p>
+  <strong>Museum:</strong>
+  <%= @location.place %>
+</p>
+
+<p>
+
+	<table >
+		<tr>
+  	<% @location.artists.each do |artist| %>
+    		
+		<% if ((@location.artists.index(artist) % 7) == 0) and (@location.artists.index(artist) != 0) %>
+			</tr>
+			<tr>
+			<td><%= link_to artist.name, artist_path(artist) %></td>
+		<% else %>
+			<td><%= link_to artist.name, artist_path(artist) %></td>
+		<% end %>
+
+  	<% end %>
+	</table>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

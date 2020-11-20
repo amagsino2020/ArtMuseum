@@ -1,0 +1,108 @@
+ 
+ <style>
+   
+    table {
+        width:100%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    #t01 tr:nth-child(even) {
+      background-color: #eee;
+    }
+    #t01 tr:nth-child(odd) {
+      background-color: #fff;
+    }
+    #t01 th {
+      background-color: black;
+      color: white;
+    }
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1 {
+        color: black;
+        text-align: center;
+    }
+    #TopBar {
+    background-color: black ;
+    color: white ;
+    padding: 5px 15px 5px 25px;
+    height: 72px;   
+    }
+    #Big-Title{
+        text-transform: uppercase;
+        display: inline-block;
+        font-family: 'HCo Ringside Narrow SSm', 'Arial', 'sans-serif';
+        font-size: 1.5em;
+        line-height: 30px;
+        margin-left: 20px;
+        padding-top: 10px;
+        }
+    #Slogan{
+        display: inline-block;
+        float: right;
+        font-style: italic;
+        font-family: 'HCo Ringside Narrow SSm', 'Arial', 'sans-serif';
+        font-size: 1em;
+        padding-top: 15px;
+    }
+    .button {
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+}
+.button1 {background-color: lightgray;}    
+</style>
+
+<head>
+
+<div id="TopBar">
+        <span id="Big-Title">List of Paintings</span>
+        <span id="Slogan"> Explore your favorite Painting</span>
+
+    </div>
+</body>
+</head>
+
+
+<button class="button button1"><%= link_to 'New artist', new_artist_path %></button>
+<th> < -- New PAINTING</th> 
+<button class="button button1"><%= link_to 'Home', controller: "main"%></button>
+<table class = "center" id= "t01">
+  <tr>
+    <th >Title</th>
+    <th>Artist</th>
+    <th>Created in</th>
+    <th>Medium</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @artists.each do |artist| %>
+    <tr>
+      <td><%= artist.name %></td>
+      <td><%= artist.nationality %></td>
+      <td><%= artist.birth_year %></td>
+      <td><%= artist.death_year %></td>
+      <td><%= link_to 'Show', artist_path(artist) %></td>
+      <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+      <td><%= link_to 'Destroy', artist_path(artist),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
